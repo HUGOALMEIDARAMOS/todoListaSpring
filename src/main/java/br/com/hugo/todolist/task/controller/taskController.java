@@ -42,7 +42,7 @@ public class taskController {
         return ResponseEntity.status(HttpStatus.OK).body(task);
     }
 
-    @GetMapping
+    @GetMapping("/")
     public List<TaskModel> listatask(HttpServletRequest request){
         var idUser = request.getAttribute("idUser");
         var tasks = this.taskrepository.findByIdUser((UUID) idUser);
